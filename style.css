@@ -1,0 +1,429 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #29190f;
+  background: #fffaf3;
+}
+
+header {
+  min-height: 85px;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: white;
+  box-shadow: 0 2px 12px #0000000a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #29190f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brand img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.brand b,
+h2 span,
+.hero h1 span {
+  color: #ef7918;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #49382d;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ef7918;
+}
+
+button,
+.main-btn,
+.order-btn {
+  cursor: pointer;
+}
+
+.order-btn,
+.main-btn {
+  background: #ef7918;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 19px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.order-btn:hover,
+.main-btn:hover {
+  background: #cf5e08;
+}
+
+.hero {
+  padding: 65px 8%;
+  min-height: 510px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.tag {
+  color: #e76c0b;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-text > p:not(.tag) {
+  color: #76665a;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 50% 50% 45% 45%;
+  border: 9px solid white;
+  box-shadow: 0 15px 35px #8c491e20;
+}
+
+.food-label {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px #00000012;
+  font-weight: bold;
+}
+
+.menu-section {
+  padding: 70px 7%;
+  background: white;
+  text-align: center;
+}
+
+.menu-section h2,
+.about h2,
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #76665a;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.filters button {
+  background: #fff3e6;
+  color: #49382d;
+  border: 1px solid #f1d9c0;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.filters button:hover {
+  background: #ef7918;
+  color: white;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+
+.food-card {
+  border: 1px solid #f1e5d8;
+  border-radius: 13px;
+  overflow: hidden;
+  background: white;
+  transition: 0.25s;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #00000010;
+}
+
+.food-card img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+}
+
+.food-info {
+  padding: 15px;
+}
+
+.food-info h3 {
+  margin-bottom: 8px;
+}
+
+.food-info p {
+  font-size: 13px;
+  color: #76665a;
+  min-height: 35px;
+  line-height: 1.5;
+}
+
+.price-row {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-row strong {
+  color: #d9660c;
+  font-size: 19px;
+}
+
+.price-row button {
+  border: none;
+  background: #fff0de;
+  color: #e76c0b;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 25px;
+}
+
+.price-row button:hover {
+  background: #ef7918;
+  color: white;
+}
+
+.about {
+  margin: 65px 7%;
+  padding: 40px;
+  border-radius: 18px;
+  background: #29190f;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.about img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.about p:not(.tag) {
+  line-height: 1.8;
+  color: #e0d2c7;
+}
+
+.contact {
+  text-align: center;
+  padding: 55px 20px 70px;
+}
+
+.contact p {
+  margin: 15px 0 25px;
+  color: #76665a;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #29190f;
+  color: white;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 1000px) {
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header {
+    padding: 12px 4%;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+
+  .brand {
+    margin-right: auto;
+    font-size: 16px;
+  }
+
+  .brand img {
+    width: 43px;
+    height: 43px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 45px 7%;
+  }
+
+  .hero-image img {
+    height: 290px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .food-card img {
+    height: 125px;
+  }
+
+  .food-info {
+    padding: 11px;
+  }
+
+  .food-info h3 {
+    font-size: 15px;
+  }
+
+  .food-info p {
+    font-size: 11px;
+  }
+
+  .about {
+    margin: 35px 5%;
+    padding: 25px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .menu-section h2,
+  .about h2,
+  .contact h2 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 360px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}
+#order {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff8f0;
+  border-radius: 12px;
+}
+
+#order h2 {
+  text-align: center;
+  color: #e87522;
+}
+
+#orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#orderForm input,
+#orderForm textarea,
+#orderForm select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#orderForm button {
+  padding: 12px;
+  background: #e87522;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#orderMessage {
+  color: green;
+  font-weight: bold;
+}

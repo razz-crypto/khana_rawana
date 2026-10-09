@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khana Rawana | Food Delivery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">
+    <img src="images/logo.png" alt="Khana Rawana Logo">
+    <span>Khana <b>Rawana</b></span>
+  </a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button class="order-btn" onclick="showCart()">
+    🛒 Cart (<span id="cartCount">0</span>)
+  </button>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="tag">FRESH FOOD • GREAT TASTE</p>
+    <h1>Good Food.<br>
+      <span>Great Mood.</span>
+    </h1>
+    <p>
+      Tumhari favourite dishes, fresh aur tasty.
+      Apna favourite food choose karo aur cravings
+      ko banao special!
+    </p>
+    <a href="#menu" class="main-btn">Order Your Food →</a>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+      alt="Delicious pizza">
+    <div class="food-label">Fresh & Delicious 🍕</div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <p class="tag">MADE FOR YOUR CRAVINGS</p>
+  <h2>Explore Our <span>Menu</span></h2>
+  <p class="subtitle">Choose your favourite food below.</p>
+
+  <div class="filters">
+    <button onclick="filterFood('all')">All</button>
+    <button onclick="filterFood('snacks')">Snacks</button>
+    <button onclick="filterFood('meals')">Meals</button>
+    <button onclick="filterFood('sweets')">Sweets</button>
+    <button onclick="filterFood('drinks')">Drinks</button>
+  </div>
+
+  <div class="food-grid">
+
+    <article class="food-card" data-category="snacks">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Samosa">
+      <div class="food-info">
+        <h3>Samosa</h3>
+        <p>Crispy and spicy snack.</p>
+        <div class="price-row">
+          <strong>₹20</strong>
+          <button onclick="addToCart('Samosa',20)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="sweets">
+      <img src="images/rasgulla.jpg">
+      <div class="food-info">
+        <h3>Rasgulla</h3>
+        <p>Soft and sweet dessert.</p>
+        <div class="price-row">
+          <strong>₹25</strong>
+          <button onclick="addToCart('Rasgulla',25)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="drinks">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80" alt="Cold drink">
+      <div class="food-info">
+        <h3>Soft Drink</h3>
+        <p>Chilled and refreshing.</p>
+        <div class="price-row">
+          <strong>₹40</strong>
+          <button onclick="addToCart('Soft Drink',40)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="snacks">
+      <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="Momos">
+      <div class="food-info">
+        <h3>Momos</h3>
+        <p>Steamed momos with spicy dip.</p>
+        <div class="price-row">
+          <strong>₹69</strong>
+          <button onclick="addToCart('Momos',69)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="meals">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Burger">
+      <div class="food-info">
+        <h3>Burger</h3>
+        <p>Delicious burger with fresh filling.</p>
+        <div class="price-row">
+          <strong>₹79</strong>
+          <button onclick="addToCart('Burger',79)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="meals">
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="Biryani">
+      <div class="food-info">
+        <h3>Biryani</h3>
+        <p>Flavourful rice and aromatic spices.</p>
+        <div class="price-row">
+          <strong>₹149</strong>
+          <button onclick="addToCart('Biryani',149)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="snacks">
+      <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80" alt="Chaat">
+      <div class="food-info">
+        <h3>Chaat</h3>
+        <p>Tangy, spicy and full of flavour.</p>
+        <div class="price-row">
+          <strong>₹59</strong>
+          <button onclick="addToCart('Chaat',59)">+</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="snacks">
+      <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=600&q=80" alt="Pizza">
+      <div class="food-info">
+        <h3>Pizza</h3>
+        <p>Cheesy pizza for every mood.</p>
+        <div class="price-row">
+          <strong>₹129</strong>
+          <button onclick="addToCart('Pizza',129)">+</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <img src="images/logo.png" alt="Khana Rawana logo">
+  <div>
+    <p class="tag">WHY KHANA RAWANA?</p>
+    <h2>Har Bite Mein <span>Khushi!</span></h2>
+    <p>Fresh food, tasty snacks aur tumhari favourite dishes.
+       Khana Rawana ke saath apni cravings ko enjoy karo.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Ready to Eat? 🍔</h2>
+  <p>Choose your favourite food and add it to your cart!</p>
+  <a href="#menu" class="main-btn">Explore Food →</a>
+</section>
+
+<footer>
+  <p>© 2026 Khana Rawana | Made with ❤️ for food lovers</p>
+</footer>
+
+
+<section id="order">
+  <h2>Place Your Order 🍔</h2>
+
+  <form id="orderForm">
+    <label>Full Name</label>
+    <input type="text" id="name"
+           placeholder="Enter your name" required>
+
+    <label>Mobile Number</label>
+    <input type="tel" id="phone"
+           placeholder="Enter mobile number"
+           pattern="[0-9]{10}" required>
+
+    <label>Delivery Address</label>
+    <textarea id="address"
+              placeholder="Enter full address"
+              required></textarea>
+
+    <label>Payment Method</label>
+    <select id="payment" required>
+      <option value="COD">Cash on Delivery</option>
+      <option value="Online">Online Payment (Demo)</option>
+    </select>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <p id="orderMessage"></p>
+  <script src="script.js"></script>
+</section>
+</body>
+</html>
