@@ -1,4 +1,5 @@
-
+const SUPABASE_URL = "https://gbxsvtgyvvriqamealjd.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_QibRh0OGQlnj0xYsrPVmiA_4BkDQH1a";
 let cart = [];
 
 function addToCart(name, price) {
@@ -76,7 +77,7 @@ document.getElementById("orderForm")
       "! Your demo order has been placed. " +
       "Payment: " + payment + ".";
 
-    console.log({
+    console.log({                                    
       name: name,
       phone: phone,
       address: address,
