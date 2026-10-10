@@ -1,6 +1,7 @@
 const SUPABASE_URL = "https://gbxsvtgyvvriqamealjd.supabase.co/rest/v1/";
 const SUPABASE_KEY = "sb_publishable_QibRh0OGQlnj0xYsrPVmiA_4BkDQH1a";
 let cart = [];
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 function addToCart(name, price) {
   const existingItem = cart.find(item => item.name === name);
