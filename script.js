@@ -63,7 +63,7 @@ function filterFood(category) {
   });
 }
 document.getElementById("orderForm")
-  .addEventListener("submit", function(event) {
+  .addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -71,17 +71,39 @@ document.getElementById("orderForm")
     const address = document.getElementById("address").value;
     const payment = document.getElementById("payment").value;
 
+    const items = cart.map(item => ({
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity
+    }));
+
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
     const message = document.getElementById("orderMessage");
 
-    message.textContent =
-      "Thank you, " + name +
-      "! Your demo order has been placed. " +
-      "Payment: " + payment + ".";
+    const { error } = await supabase
+      .from("orders")
+      .insert([{
+        customer_name: name,
+        phone: phone,
+        address: address,
+        items: items,
+        total_amount: total,
+        status: "pending"
+      }]);
 
-    console.log({                                    
-      name: name,
-      phone: phone,
-      address: address,
-      payment: payment
-    });
+    if (error) {
+      console.error(error);
+      message.textContent = "Order save nahi hua. Dobara try karein.";
+      return;
+    }
+
+    message.textContent =
+      "Thank you, " + name + "! Aapka order successfully place ho gaya.";
+
+    cart = [];
+    updateCart();
   });
