@@ -92,7 +92,7 @@ document.getElementById("orderForm")
         address: address,
         items: items,
         total_amount: total,
-        status: "pending"
+        status: "Pending"
       }]);
 
     if (error) {
