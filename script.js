@@ -97,7 +97,9 @@ document.getElementById("orderForm")
 
     if (error) {
       console.error(error);
-      message.textContent = "Order save nahi hua. Dobara try karein." + error.message;
+      message.textContent = 
+        "Order save nahi hua. Dobara try karein: " +
+        error.message;
       return;
     }
 
