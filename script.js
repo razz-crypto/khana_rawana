@@ -92,12 +92,12 @@ document.getElementById("orderForm")
         address: address,
         items: items,
         total_amount: total,
-        status: "pending"
+        status: "Pending"
       }]);
 
     if (error) {
       console.error(error);
-      message.textContent = "Order save nahi hua. Dobara try karein.";
+      message.textContent = "Order save nahi hua. Dobara try karein." + error.message;
       return;
     }
 
